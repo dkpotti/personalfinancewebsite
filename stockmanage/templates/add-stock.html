@@ -1,0 +1,74 @@
+{% extends 'base.html' %} {% block content %}
+<form class="row g-3" action="{% url 'add-stock' %}" method="POST">
+  {% csrf_token %}
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Stock Ticker</label>
+    <input type="text" class="form-control" id="inputEmail4" name="symbol" />
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Share Price I Bought</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputEmail4"
+      name="sharePriceBought"
+    />
+    {% comment %}
+    <select
+      class="form-select"
+      aria-label="Default select example"
+      name="caseType"
+    >
+      <option selected>Open this to select</option>
+      <option value="Certificate Deposit">Certificate Deposit</option>
+      <option value="T Bills">T Bills</option>
+      <option value="I Bonds">I Bonds</option>
+      <option value="Savings Account">Savings Account</option>
+    </select>
+    {% endcomment %}
+  </div>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">Number of Shares</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputAddress"
+      placeholder="Enter Amount"
+      name="numberOfShares"
+    />
+  </div>
+  <div class="col-12">
+    <label for="inputAddress2" class="form-label">Dividend Amount</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputAddress2"
+      placeholder="Enter the Amount"
+      name="dividendAmount"
+    />
+  </div>
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">Dividend Percentage</label>
+    <input
+      type="text"
+      class="form-control"
+      id="inputCity"
+      name="dividendPercentage"
+    />
+  </div>
+  <div class="col-md-4">
+    <label for="inputState" class="form-label">Share Bought Date</label>
+    <input
+      type="date"
+      class="form-control"
+      id="maturitydate"
+      name="shareBoughtDate"
+    />
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Enter Cash</button>
+  </div>
+</form>
+
+<br />
+{% endblock %}

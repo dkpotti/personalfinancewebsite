@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block content %}
+<table
+  class="table table-striped-columns table-warning table-hover table-bordered"
+>
+  <thead class="table-primary subtle">
+    <tr>
+      <th scope="col">Stock Ticker</th>
+      <th scope="col">Stock Name</th>
+      <th scope="col">Sector Name</th>
+      <th scope="col">Industry Name</th>
+      <th scope="col">Share Price (At the time of buy)</th>
+      <th scope="col">Regular Market Price</th>
+      <th scope="col">Number of Share(s)</th>
+      <th scope="col">Dividend Amount</th>
+      <th scope="col">Dividend Percentage</th>
+      <th scope="col">Dividend Date</th>
+      <th scope="col">Share Bought Date</th>
+      <th scope="col">PE Ratio</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for eachStockItem in allstocks %}
+    <tr>
+      <th scope="row">{{ eachStockItem.symbol }}</th>
+      <td>{{ eachStockItem.stockName }}</td>
+      <td>{{ eachStockItem.sectorName }}</td>
+      <td>{{ eachStockItem.industryName }}</td>
+      <td>${{ eachStockItem.sharePriceBought }}</td>
+      <td>${{ eachStockItem.regularMarketPrice }}</td>
+      <td>{{ eachStockItem.numberOfShares }}</td>
+      <td>${{ eachStockItem.dividendAmount|floatformat:2 }}</td>
+      <td>{{ eachStockItem.dividendPercentage|floatformat:2 }}%</td>
+      <td>{{ eachStockItem.dividendDate }}</td>
+      <td>{{ eachStockItem.shareBoughtDate }}</td>
+      <td>{{ eachStockItem.peRatio }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
