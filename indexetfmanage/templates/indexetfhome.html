@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block content %}
+<p>{{message}}</p>
+<br />
+<table
+  class="table table-striped-columns table-warning table-hover table-bordered"
+>
+  <thead class="table-primary subtle">
+    <tr>
+      <th scope="col">Fund Ticker</th>
+      <th scope="col">Fund Name</th>
+      <th scope="col">Fund Type</th>
+      <th scope="col">Fund Price</th>
+      <th scope="col">Fund Expense Ratio</th>
+      <th scope="col">YTD Return</th>
+      <th scope="col">PE Ratio</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for eachFund in allFunds %}
+    <tr>
+      <th scope="row">{{ eachFund.indexName }}</th>
+      <td>{{ eachFund.indexlongname }}</td>
+      <td>{{ eachFund.fundType }}</td>
+      <td>{{ eachFund.indexprice }}</td>
+      <td>{{ eachFund.expenseratio }}</td>
+      <td>{{ eachFund.ytdreturn}}</td>
+      <td>{{ eachFund.peratio|floatformat:2 }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<br />
+{% endblock %}

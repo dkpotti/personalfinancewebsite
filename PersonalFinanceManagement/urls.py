@@ -20,4 +20,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("moneymanage/", include("moneymanage.urls")),
     path("stockmanage/", include("stockmanage.urls")),
+    path("indexetfmanage/", include("indexetfmanage.urls")),
 ]

@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content %}
+<br />
+<form class="row g-3" action="{% url 'add-fund' %}" method="POST">
+  {% csrf_token %}
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Stock Ticker</label>
+    <input type="text" class="form-control" id="inputEmail4" name="indexName" />
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Share Price I Bought</label>
+    <input type="text" class="form-control" id="inputEmail4" name="fundType" />
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Add Fund</button>
+  </div>
+</form>
+<br />
+{% endblock %}

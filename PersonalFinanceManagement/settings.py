@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "moneymanage",
     "stockmanage",
+    "indexetfmanage",
     "mathfilters",
     "forex_python",
 ]
