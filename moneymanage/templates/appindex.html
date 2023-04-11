@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% block content %}
+<br />
+<div class="container text-center">
+  <div class="row align-items-center">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">Where Money goes</div>
+        <div class="card-body bg-secondary-subtle">
+          <h5 class="card-title">Money Manage</h5>
+          <p class="card-text">
+            Managing a savings account involves monitoring and tracking your deposits and withdrawals, setting financial goals, and making informed decisions about how to maximize your interest earnings.
+          </p>
+          <a href="{% url 'home' %}" class="btn btn-primary">My Money Route</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-header">How Stocks are behaving</div>
+        <div class="card-body bg-secondary-subtle">
+          <h5 class="card-title">Stock Manage</h5>
+          <p class="card-text">
+            Managing stocks at one place involves consolidating and organizing all your stock investments and transactions in a single platform, allowing for easy tracking and analysis. It enables investors to make informed decisions, optimize their portfolio, and potentially maximize their returns.
+          </p>
+          <a href="{% url 'index' %}"" class="btn btn-primary">My Stocks</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-header">Index and ETF in Mind</div>
+        <div class="card-body bg-secondary-subtle">
+          <h5 class="card-title">Index & ETF Manage</h5>
+          <p class="card-text">
+            Managing index funds and ETFs at one place allows investors to easily diversify their portfolio and track their investments in a convenient and efficient manner. This can help investors save time and make informed decisions about their investments, leading to potentially better returns.
+          </p>
+          <a href="{% url 'indexetfhome' %}" class="btn btn-primary">Index Funds & ETFs</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+{% endblock %}
